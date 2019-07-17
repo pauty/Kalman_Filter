@@ -8,6 +8,16 @@ Come consigliato si è fatto uso della libreria Java EJML, la quale mette a disp
 \section{Simulazione di un processo}
 
 Il processo scelto è lo spostamento un oggetto che si muove di moto uniformemente accelerato in due dimensioni (piano XY). Lo stato è quindi rappresentato dal vettore:
+\begin{equation*}
+\textbf{x} = 
+\begin{bmatrix}
+x \\
+y \\
+v_x \\
+v_y \\
+\end{bmatrix}
+\qquad
+\end{equation*}
 
 dove le componenti $x$ e $y$ rappresentano la posizione corrente dell'oggetto, mentre $v_x$ e $v_y$ rappresentano la velocità dello stesso.
 
@@ -379,6 +389,8 @@ Al contrario, se il rumore di processo è alto rispetto al rumore di misurazione
 	\captionof{figure}{Stima di $x$ nelle prime 100 iterazioni, ponendo $\sigma_{proc} = 1$ e $\sigma_{meas} = 0.01$.} 
 	\label{ws_a0m100_long}
 \end{minipage}
+
+\newpage
 
 \item \textbf{Osservazione di $x$}\\
 Se la variabile di stato osservata non è $x^2$ bensì $x$, la situazione generale non migliora: il Kalman filter, potenzialmente, riesce ad approssimare bene $x$; nonostante ciò l'errore commesso nella stima di $x^2$ è destinato ad aumentare man mano che ci si allontana dal punto in cui è stata calcolata la formula di Taylor (dove l'approssimazione lineare della funzione quadratica risulta ottimale). 
